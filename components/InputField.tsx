@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { classNames } from "./utils";
+import { classNames, titlecase } from "./utils";
 
 export interface InputFieldProps {
     fieldName: string;
