@@ -1,14 +1,15 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { IntegrationName } from "../integrations/integrationTypes";
-import { integrations } from "../integrations/integrations";
+import { Integration } from "../integrations/integrations";
 import Selection from "../components/Selection";
 import IntegrationModal from "../components/IntegrationModal";
 import { ToastContainer } from "react-toastify";
+import { server } from "../config/index";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ integrations }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const [selectedModalOpen, setSelectedModalOpen] = useState(IntegrationName.NONE);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -62,6 +63,17 @@ const Home: NextPage = () => {
             </main>
         </div>
     );
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    const res = await fetch(`${server}/api/integrations`);
+    const integrations: Integration[] = await res.json();
+
+    return {
+        props: {
+            integrations,
+        },
+    };
 };
 
 export default Home;
