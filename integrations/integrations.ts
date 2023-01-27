@@ -81,6 +81,7 @@ export const integrations = [
                     },
                     {
                         fieldName: "field_mappings",
+                        defaultValue: "hello world",
                         validatorFunction: hubspotFieldMappingsValidator,
                     },
                 ],
