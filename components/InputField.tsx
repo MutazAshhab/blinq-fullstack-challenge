@@ -4,7 +4,7 @@ import { classNames, titlecase } from "./utils";
 export interface InputFieldProps {
     fieldName: string;
     defaultValue?: string;
-    validator: (userInput: string) => boolean;
+    validator: (userInput: string, defaultValue?: string) => boolean;
     onChangeHandler: (
         fieldName: string,
         fieldValue: string,
@@ -25,7 +25,9 @@ const InputField = ({ fieldName, validator, onChangeHandler, defaultValue }: Inp
         <div style={{ display: "flex", flexDirection: "column" }}>
             <p style={{ margin: "0 0 5px 0" }}>{titlecase(fieldName)}</p>
             <input
-                className={classNames([value.length !== 0 && !validator(value) ? "invalid-input" : "input"])}
+                className={classNames([
+                    value.length !== 0 && !validator(value, defaultValue) ? "invalid-input" : "input",
+                ])}
                 type="text"
                 style={{
                     padding: "10px 5px 10px 5px",
