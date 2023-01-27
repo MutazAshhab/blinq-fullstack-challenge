@@ -21,6 +21,7 @@ export interface ModalConfig {
 
 export interface IntegrationPrompt {
     fieldName: string;
+    defaultValue?: string;
     validatorFunction: (userInput: string) => boolean;
 }
 
