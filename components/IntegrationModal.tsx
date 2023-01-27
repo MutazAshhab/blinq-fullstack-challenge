@@ -77,6 +77,8 @@ const IntegrationModal = ({ open, config, integrationStatus, closeModal }: Integ
                     </span>
                 </div>
 
+                {config.selectionDescription && <p>{config.selectionDescription}</p>}
+
                 {!integrationStatus && (
                     <>
                         {config.prompts.map((data, index) => {

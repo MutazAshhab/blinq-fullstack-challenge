@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { classNames } from "./utils";
+import { classNames, titlecase } from "./utils";
 
 export interface InputFieldProps {
     fieldName: string;
@@ -13,16 +13,6 @@ export interface InputFieldProps {
 
 const InputField = ({ fieldName, validator, onChangeHandler }: InputFieldProps) => {
     const [value, setValue] = useState("");
-
-    const titlecase: (str: string) => string = (str: string) => {
-        let splitStr = str.toLowerCase().split("_");
-
-        for (var i = 0; i < splitStr.length; i++) {
-            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
-        }
-
-        return splitStr.join(" ");
-    };
 
     const handleChange: (inputValue: string) => void = (inputValue) => {
         setValue(inputValue);
