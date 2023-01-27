@@ -26,7 +26,7 @@ export const salesforceSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean
     inputArr.forEach((prompt: IntegrationPrompt, _index: number) => {
         const val = prompt.fieldName;
         const validator = prompt.validatorFunction;
-        valid = valid && validator(val);
+        valid = valid && validator(val, prompt.defaultValue);
     });
 
     return valid;
@@ -51,7 +51,7 @@ export const zapierSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean = (
     inputArr.forEach((prompt: IntegrationPrompt, _index: number) => {
         const val = prompt.fieldName;
         const validator = prompt.validatorFunction;
-        valid = valid && validator(val);
+        valid = valid && validator(val, prompt.defaultValue);
     });
 
     return valid;
@@ -94,7 +94,7 @@ export const hubspotSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean = 
     inputArr.forEach((prompt: IntegrationPrompt, _index: number) => {
         const val = prompt.fieldName;
         const validator = prompt.validatorFunction;
-        valid = valid && validator(val);
+        valid = valid && validator(val, prompt.defaultValue);
     });
 
     return valid;
