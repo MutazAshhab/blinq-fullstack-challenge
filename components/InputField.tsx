@@ -8,7 +8,8 @@ export interface InputFieldProps {
     onChangeHandler: (
         fieldName: string,
         fieldValue: string,
-        validatorFunction: (userInput: string, defaultValue?: string) => boolean
+        validatorFunction: (userInput: string, defaultValue?: string) => boolean,
+        defaultValue?: string
     ) => void;
 }
 
@@ -17,7 +18,7 @@ const InputField = ({ fieldName, validator, onChangeHandler, defaultValue }: Inp
 
     const handleChange: (inputValue: string) => void = (inputValue) => {
         setValue(inputValue);
-        onChangeHandler(fieldName, inputValue, validator);
+        onChangeHandler(fieldName, inputValue, validator, defaultValue);
     };
 
     return (
