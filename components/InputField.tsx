@@ -21,11 +21,7 @@ const InputField = ({ fieldName, validator, onChangeHandler, defaultValue }: Inp
         onChangeHandler(fieldName, inputValue, validator, defaultValue);
     };
 
-    useEffect(() => {
-        if (defaultValue) {
-            handleChange(defaultValue);
-        }
-    }, []);
+    onChangeHandler(fieldName, value, validator, defaultValue);
 
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
