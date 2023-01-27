@@ -22,7 +22,7 @@ export interface ModalConfig {
 export interface IntegrationPrompt {
     fieldName: string;
     defaultValue?: string;
-    validatorFunction: (userInput: string) => boolean;
+    validatorFunction: (userInput: string, defaultValue?: string) => boolean;
 }
 
 export enum IntegrationName {

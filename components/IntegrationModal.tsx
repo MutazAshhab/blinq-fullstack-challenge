@@ -19,7 +19,7 @@ const IntegrationModal = ({ open, config, integrationStatus, closeModal }: Integ
     const returnValueToParent: (
         fieldName: string,
         fieldValue: string,
-        validatorFunction: (userInput: string) => boolean
+        validatorFunction: (userInput: string, defaultValue?: string) => boolean
     ) => void = (fieldName, fieldValue, validatorFunction) => {
         fields.set(fieldName, { fieldName: fieldValue, validatorFunction });
     };

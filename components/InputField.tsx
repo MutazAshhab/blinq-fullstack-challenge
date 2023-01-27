@@ -7,7 +7,7 @@ export interface InputFieldProps {
     onChangeHandler: (
         fieldName: string,
         fieldValue: string,
-        validatorFunction: (userInput: string) => boolean
+        validatorFunction: (userInput: string, defaultValue?: string) => boolean
     ) => void;
 }
 
