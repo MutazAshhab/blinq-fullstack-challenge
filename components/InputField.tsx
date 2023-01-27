@@ -21,6 +21,12 @@ const InputField = ({ fieldName, validator, onChangeHandler, defaultValue }: Inp
         onChangeHandler(fieldName, inputValue, validator, defaultValue);
     };
 
+    useEffect(() => {
+        if (defaultValue) {
+            handleChange(defaultValue);
+        }
+    }, []);
+
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
             <p style={{ margin: "0 0 5px 0" }}>{titlecase(fieldName)}</p>
