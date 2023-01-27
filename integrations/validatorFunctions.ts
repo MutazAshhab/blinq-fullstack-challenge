@@ -4,12 +4,18 @@ import { IntegrationPrompt } from "./integrationTypes";
  * SALESFORCE
  */
 
-export const salesforceClientIdValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const salesforceClientIdValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
 
-export const salesforceClientSecretValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const salesforceClientSecretValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
 
 export const salesforceSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean = (
@@ -30,8 +36,11 @@ export const salesforceSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean
  * ZAPIER
  */
 
-export const zapierApiKeyValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const zapierApiKeyValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
 
 export const zapierSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean = (
@@ -52,17 +61,29 @@ export const zapierSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean = (
  * HUBSPOT
  */
 
-export const hubspotTenantDomainValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const hubspotTenantDomainValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
-export const hubspotClientIdValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const hubspotClientIdValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
-export const hubspotClientSecretValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const hubspotClientSecretValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
-export const hubspotFieldMappingsValidator: (userInput: string) => boolean = (userInput: string) => {
-    return userInput === "valid";
+export const hubspotFieldMappingsValidator: (userInput: string, defaultValue?: string) => boolean = (
+    userInput: string,
+    defaultValue?: string
+) => {
+    return userInput === "valid" || userInput === defaultValue;
 };
 
 export const hubspotSubmitHandler: (inputArr: IntegrationPrompt[]) => boolean = (
