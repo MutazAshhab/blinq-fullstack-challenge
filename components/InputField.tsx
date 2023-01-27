@@ -3,6 +3,7 @@ import { classNames, titlecase } from "./utils";
 
 export interface InputFieldProps {
     fieldName: string;
+    defaultValue?: string;
     validator: (userInput: string) => boolean;
     onChangeHandler: (
         fieldName: string,
@@ -11,8 +12,8 @@ export interface InputFieldProps {
     ) => void;
 }
 
-const InputField = ({ fieldName, validator, onChangeHandler }: InputFieldProps) => {
-    const [value, setValue] = useState("");
+const InputField = ({ fieldName, validator, onChangeHandler, defaultValue }: InputFieldProps) => {
+    const [value, setValue] = useState(defaultValue ? defaultValue : "");
 
     const handleChange: (inputValue: string) => void = (inputValue) => {
         setValue(inputValue);
@@ -32,6 +33,7 @@ const InputField = ({ fieldName, validator, onChangeHandler }: InputFieldProps) 
                 }}
                 spellCheck={false}
                 onChange={(event) => handleChange(event.target.value)}
+                defaultValue={defaultValue}
             />
         </div>
     );

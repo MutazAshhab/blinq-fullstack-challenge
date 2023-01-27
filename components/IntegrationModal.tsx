@@ -86,6 +86,7 @@ const IntegrationModal = ({ open, config, integrationStatus, closeModal }: Integ
                                 <div key={index}>
                                     <InputField
                                         fieldName={data.fieldName}
+                                        defaultValue={data.defaultValue}
                                         validator={data.validatorFunction}
                                         onChangeHandler={returnValueToParent}
                                     />
