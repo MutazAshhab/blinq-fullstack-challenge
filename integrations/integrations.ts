@@ -85,6 +85,7 @@ export const integrations = [
                     },
                 ],
                 submitHandler: hubspotSubmitHandler,
+                containsFieldMappings: true,
             },
             integrationStatus: false,
         } as IntegrationData,

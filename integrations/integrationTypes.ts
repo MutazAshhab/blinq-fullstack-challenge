@@ -17,6 +17,7 @@ export interface ModalConfig {
     selectionDescription?: string;
     prompts: IntegrationPrompt[];
     submitHandler: (inputArr: IntegrationPrompt[]) => boolean;
+    containsFieldMappings?: boolean;
 }
 
 export interface IntegrationPrompt {

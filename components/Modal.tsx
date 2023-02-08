@@ -16,7 +16,7 @@ const Modal = ({ open, children }: ModalProps) => {
     const modalClassName = classNamesArr.join(" ");
 
     return (
-        <div className={modalClassName}>
+        <div className={modalClassName} style={{ overflowY: "scroll" }}>
             <div className="modal-content">{children}</div>
         </div>
     );

@@ -2,6 +2,7 @@ import { IntegrationPrompt, ModalConfig } from "../integrations/integrationTypes
 import InputField from "./InputField";
 import Modal from "./Modal";
 import Image from "next/image";
+import FieldMappings from "./FieldMappings";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -92,6 +93,8 @@ const IntegrationModal = ({ open, config, integrationStatus, closeModal }: Integ
                                 </div>
                             );
                         })}
+
+                        {config.containsFieldMappings && <FieldMappings />}
 
                         <div
                             style={{

@@ -11,3 +11,8 @@ export const titlecase: (str: string) => string = (str: string) => {
 
     return splitStr.join(" ");
 };
+
+export interface FieldMappingEntry {
+    integrationField: string;
+    blinqField: string;
+}
